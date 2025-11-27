@@ -1,5 +1,6 @@
 #include <iostream>
 #include <chrono>
+#include "dijkstra.h"
 
 #include "Candy.h"
 #include "FindCelebrity.h"
@@ -27,7 +28,7 @@ void test1() {
 }
 
 int main() {
-    measureTime(test1);
+    measureTime(dijkstra);
 
     FindCelebrity::knowsMatrix = {
         {false, true, true},
