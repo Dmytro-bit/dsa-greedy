@@ -9,7 +9,7 @@
 using namespace std;
 
 
-std::vector<std::vector<bool>> FindCelebrity::knowsMatrix;
+std::vector<std::vector<bool> > FindCelebrity::knowsMatrix;
 std::vector<int> ratings;
 
 template<typename Func, typename... Args>
@@ -27,29 +27,35 @@ void test1() {
     for (volatile int i = 0; i < 100000000; ++i);
 }
 
-int main() {
-    measureTime(dijkstra);
-
+void testCelebrity() {
     FindCelebrity::knowsMatrix = {
         {false, true, true},
         {false, false, true},
         {false, false, false}
     };
-    cout << FindCelebrity::findCelebrity(3) << endl;
+    cout << "3 people : " << FindCelebrity::findCelebrity(3) << endl;
+    measureTime([]() { FindCelebrity::findCelebrity(3); });
 
-    FindCelebrity::knowsMatrix = {
-        {false, true, false},
-        {false, false, false},
-        {true, true, false}
+    FindCelebrity::knowsMatrix  = {
+            {false, true,  true,  false},
+            {false, false, false, false},
+            {false, true,  false, false},
+            {true,  true,  false, false}
     };
-    cout << FindCelebrity::findCelebrity(3) << endl;
+    cout <<  "4 person : " <<FindCelebrity::findCelebrity(4) << endl;
+    measureTime([]() { FindCelebrity::findCelebrity(4); });
 
-    FindCelebrity::knowsMatrix = {
-        {false}
-    };
-    cout << FindCelebrity::findCelebrity(1) << endl;
-    ratings = {1,2,3,2,1};
+
+}
+
+int main() {
+    measureTime(dijkstra);
+    cout << "Celebrity benchmark:" << endl;
+    testCelebrity();
+    cout << "Candy benchmark:" << endl;
+    ratings = {1, 2, 3, 2, 1};
     int candies = Candy::candy(ratings);
-    cout <<candies << endl;
+    measureTime([](){(void)Candy::candy(ratings);} );
+    cout << candies << endl;
     return 0;
 }
