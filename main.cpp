@@ -1,6 +1,7 @@
 #include <iostream>
 #include <chrono>
 
+#include "Candy.h"
 #include "FindCelebrity.h"
 
 
@@ -8,6 +9,7 @@ using namespace std;
 
 
 std::vector<std::vector<bool>> FindCelebrity::knowsMatrix;
+std::vector<int> ratings;
 
 template<typename Func, typename... Args>
 void measureTime(Func &&func) {
@@ -45,5 +47,8 @@ int main() {
         {false}
     };
     cout << FindCelebrity::findCelebrity(1) << endl;
+    ratings = {1,2,3,2,1};
+    int candies = Candy::candy(ratings);
+    cout <<candies << endl;
     return 0;
 }
