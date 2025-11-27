@@ -1,6 +1,6 @@
 #include <iostream>
 #include <chrono>
-
+#include "dijkstra.h"
 
 using namespace std;
 
@@ -21,6 +21,6 @@ void test1() {
 }
 
 int main() {
-    measureTime(test1);
+    measureTime(dijkstra);
     return 0;
 }
