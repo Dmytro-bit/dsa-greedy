@@ -13,11 +13,15 @@ solve the problem as optimally as possible at each step, until it end up stuck a
 
 ![greedy example](../assets/Greedy-search-path-example.gif)
 
-## Use cases
+## Realistic use cases
 
 The main goal of a greedy algorithm is to **optimize solutions** through iterative decisions.
 Some typical use cases:
 
-- Dijkstra’s algorithm
-- Knapsack problem
-- Huffman coding
+1) Dijkstra’s algorithm
+   - Finding the shortest path in a weighted graph.
+2) Knapsack problem
+   - Selecting items with given weights and values to maximize value within a weight limit
+3) Huffman coding
+   - Creates an optimal prefix code for a set of symbols based on their frequencies.
+   - Data compression.
