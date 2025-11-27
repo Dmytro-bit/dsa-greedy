@@ -36,26 +36,30 @@ void testCelebrity() {
     cout << "3 people : " << FindCelebrity::findCelebrity(3) << endl;
     measureTime([]() { FindCelebrity::findCelebrity(3); });
 
-    FindCelebrity::knowsMatrix  = {
-            {false, true,  true,  false},
-            {false, false, false, false},
-            {false, true,  false, false},
-            {true,  true,  false, false}
+    FindCelebrity::knowsMatrix = {
+        {false, true, true, false},
+        {false, false, false, false},
+        {false, true, false, false},
+        {true, true, false, false}
     };
-    cout <<  "4 person : " <<FindCelebrity::findCelebrity(4) << endl;
+    cout << "4 person : " << FindCelebrity::findCelebrity(4) << endl;
     measureTime([]() { FindCelebrity::findCelebrity(4); });
-
-
 }
 
 int main() {
+    map<string, int> shortestDistance = dijkstra();
+    for (const auto &pair: shortestDistance) {
+        cout << pair.first << " - " << pair.second << endl;
+    }
     measureTime(dijkstra);
+
+    cout << endl;
     cout << "Celebrity benchmark:" << endl;
     testCelebrity();
     cout << "Candy benchmark:" << endl;
     ratings = {1, 2, 3, 2, 1};
     int candies = Candy::candy(ratings);
-    measureTime([](){(void)Candy::candy(ratings);} );
+    measureTime([]() { (void) Candy::candy(ratings); });
     cout << candies << endl;
     return 0;
 }

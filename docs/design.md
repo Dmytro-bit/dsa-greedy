@@ -29,7 +29,9 @@ Ratings: [1,2,4,2,1]
 Left-to-right pass: [1,2,4,1,1]
 Right-to-left pass: [1,2,4,2,1]
 Total candies = 9
+
 ![candy_visual_demo.png](../assets/candy_visual_demo.png)
+
 This problem is O(n) in time and O(n) in space if storing candy counts separately.
 
 Both problems showcase how greedy solutions can solve practical tasks with simple logic and minimal computation.
