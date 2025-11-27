@@ -17,6 +17,7 @@ solve the problem as optimally as possible at each step, until it end up stuck a
 
 The main goal of a greedy algorithm is to **optimize solutions** through iterative decisions.
 Some typical use cases:
+
 - Dijkstra’s algorithm
 - Knapsack problem
 - Huffman coding

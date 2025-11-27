@@ -6,5 +6,6 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(dsa_greedy main.cpp
         FindCelebrity.h
         Candy.h
-        dijkstra.h)
+        dijkstra.h
+)
 

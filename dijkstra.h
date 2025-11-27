@@ -1,3 +1,10 @@
+//
+// Created by dmytro on 11/27/25.
+//
+
+#ifndef DSA_GREEDY_DIJKSTRA_H
+#define DSA_GREEDY_DIJKSTRA_H
+
 // Source: https://github.com/Dmytro-bit/oop-CA2-Collections/blob/main/src/Question11.java
 
 #include <iostream>
@@ -25,7 +32,7 @@ public:
     int getDistance() const { return distance; }
 };
 
-int dijkstra() {
+map<string, int> dijkstra() {
     string city1, city2, from = "";
     int distance;
     int counter = 0;
@@ -74,9 +81,8 @@ int dijkstra() {
         }
     }
 
-    for (const auto &pair: shortestDistance) {
-        cout << pair.first << " - " << pair.second << endl;
-    }
-
-    return 0;
+    return shortestDistance;
 }
+
+
+#endif //DSA_GREEDY_DIJKSTRA_H
