@@ -1,9 +1,13 @@
 #include <iostream>
 #include <chrono>
 
+#include "FindCelebrity.h"
+
 
 using namespace std;
 
+
+std::vector<std::vector<bool>> FindCelebrity::knowsMatrix;
 
 template<typename Func, typename... Args>
 void measureTime(Func &&func) {
@@ -22,5 +26,24 @@ void test1() {
 
 int main() {
     measureTime(test1);
+
+    FindCelebrity::knowsMatrix = {
+        {false, true, true},
+        {false, false, true},
+        {false, false, false}
+    };
+    cout << FindCelebrity::findCelebrity(3) << endl;
+
+    FindCelebrity::knowsMatrix = {
+        {false, true, false},
+        {false, false, false},
+        {true, true, false}
+    };
+    cout << FindCelebrity::findCelebrity(3) << endl;
+
+    FindCelebrity::knowsMatrix = {
+        {false}
+    };
+    cout << FindCelebrity::findCelebrity(1) << endl;
     return 0;
 }
